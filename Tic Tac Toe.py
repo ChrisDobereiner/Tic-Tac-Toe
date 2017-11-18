@@ -26,7 +26,21 @@ def turn():
     else:
         print ('Ops! Este lugar ja foi selecionado!')
 
-
+def AIturn():
+    for i in range (0,9):
+        somaTotal = []
+        if (tabuleiroAI[i] == 4):
+            tabuleiroAI[i] == 3
+            tabuleiro[i] = 'O'
+            somaTotal[i] = ((tabuleiroAI[0]*tabuleiroAI[1]*tabuleiroAI[2]) + (tabuleiroAI[3]*tabuleiroAI[4]*tabuleiroAI[5]) + (tabuleiroAI[6]*tabuleiroAI[7]*tabuleiroAI[8]) + (tabuleiroAI[0]*tabuleiroAI[3]*tabuleiroAI[6]) + (tabuleiroAI[1]*tabuleiroAI[4]*tabuleiroAI[7]) + (tabuleiroAI[2]*tabuleiroAI[5]*tabuleiroAI[8]) + (tabuleiroAI[0]*tabuleiroAI[4]*tabuleiroAI[8]) + (tabuleiroAI[2]*tabuleiroAI[4]*tabuleiroAI[6]))
+            int(somaTotal[i])
+            if (somaTotal[i] < somaTotal[i - 1] and somaTotal[i] < somaTotal[i - 2] and somaTotal[i] < somaTotal[i - 3] and somaTotal[i] < somaTotal[i - 4] and somaTotal[i] < somaTotal[i - 5] and somaTotal[i] < somaTotal[i - 6] and somaTotal[i] < somaTotal[i - 7] and somaTotal[i] < somaTotal[i - 8]):
+                return True
+            else:
+                tabuleiroAI[i] = 4
+                tabuleiro[i] = ' '
+    
+    
         
 def play_again():
     novamente = input('Quer jogar novamente? ')
@@ -35,6 +49,7 @@ def play_again():
                  ' ',' ',' ',
                  ' ',' ',' ']
         check_winner() == False #Play again not working
+        tie() == False
 
 def tie():
     for i in range (0,9):
@@ -99,11 +114,11 @@ def check_winner():
     
 print ('Voce sera "X" e o computador sera "O"!')
 
-if (check_winner() == False and tie() == False):
-    while (check_winner() == False and tie() == False):  #Jogo
-        imprimir()
-        turn()
-        check_winner()
+while (check_winner() == False and tie() == False):  #Jogo
+    imprimir()
+    turn()
+    AIturn()
+    check_winner()
 
 imprimir()
 print('O jogo acabou!')
@@ -111,4 +126,6 @@ play_again()
 
 
     
+    
+
     
