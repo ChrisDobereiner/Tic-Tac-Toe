@@ -28,18 +28,18 @@ def turn():
 
 def AIturn():
     for i in range (0,9):
-        somaTotal = []
+        somaTotal = [0,0,0,0,0,0,0,0,0]
         if (tabuleiroAI[i] == 4):
-            tabuleiroAI[i] == 3
+            tabuleiroAI[i] = 3
             tabuleiro[i] = 'O'
             somaTotal[i] = ((tabuleiroAI[0]*tabuleiroAI[1]*tabuleiroAI[2]) + (tabuleiroAI[3]*tabuleiroAI[4]*tabuleiroAI[5]) + (tabuleiroAI[6]*tabuleiroAI[7]*tabuleiroAI[8]) + (tabuleiroAI[0]*tabuleiroAI[3]*tabuleiroAI[6]) + (tabuleiroAI[1]*tabuleiroAI[4]*tabuleiroAI[7]) + (tabuleiroAI[2]*tabuleiroAI[5]*tabuleiroAI[8]) + (tabuleiroAI[0]*tabuleiroAI[4]*tabuleiroAI[8]) + (tabuleiroAI[2]*tabuleiroAI[4]*tabuleiroAI[6]))
             int(somaTotal[i])
-            if (somaTotal[i] < somaTotal[i - 1] and somaTotal[i] < somaTotal[i - 2] and somaTotal[i] < somaTotal[i - 3] and somaTotal[i] < somaTotal[i - 4] and somaTotal[i] < somaTotal[i - 5] and somaTotal[i] < somaTotal[i - 6] and somaTotal[i] < somaTotal[i - 7] and somaTotal[i] < somaTotal[i - 8]):
+            print (somaTotal[i])
+            if (somaTotal[i]<somaTotal[i-1]):
                 return True
             else:
                 tabuleiroAI[i] = 4
-                tabuleiro[i] = ' '
-    
+                tabuleiro[i] = ' '    
     
         
 def play_again():
